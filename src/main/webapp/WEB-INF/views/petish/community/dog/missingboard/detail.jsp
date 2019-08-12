@@ -376,7 +376,7 @@
    <!-- 신고 모달창 -->
    <div id="report-modal" tabindex="-1" role="dialog" aria-hidden="true"
       class="modal fade">
-      <div role="document" class="modal-dialog">
+      <div role="document" class="modal-dialog modal-dialog-centered">
          <div class="modal-content">
             <div class="modal-header">
                <h4 align="center" class="modal-title">게시글 신고</h4>
