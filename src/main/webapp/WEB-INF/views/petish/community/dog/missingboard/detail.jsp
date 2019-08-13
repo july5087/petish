@@ -66,9 +66,10 @@
 <link href="/resources/css/missingboard/detail.css" rel="stylesheet">
 <link href="/resources/css/report.css" rel="stylesheet">
 
+<link href="/resources/css/fonts.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="font-family: 'Do Hyeon', sans-serif;">
       <%@ include file="/WEB-INF/views/commons/top.jspf"%>
       
       <%
@@ -169,7 +170,7 @@
          <div class="d-flex justify-content-center">
             <table class="poster-table">
                <tr>
-                  <th colspan="2" class="poster-title"><b>강아지를 찾습니다</b></th>
+                  <th colspan="2" class="poster-title">강아지를 찾습니다</th>
                </tr>
                <tr>
                
@@ -217,7 +218,7 @@
                </tr>
                
                <tr>
-                  <th colspan="2" class="phonenumber-info">
+                  <th colspan="2" class="phonenumber-reward-info">
                   <i class="fa fa-phone" id="phone-icon"></i><b><%=dto.getPhone_number()%></b>
                   <div style="padding-top:1rem;">사례금 <%=dto.getReward()%></div>              
                   </th>
@@ -554,7 +555,7 @@
 
 	// 주소-좌표 변환 객체를 생성합니다
 	var geocoder = new kakao.maps.services.Geocoder();
-
+	
 	//원래 게시글의 모임장소 주소를 좌표로 바꿔주고 지도에 표시해주는 함수//********************************************************
 	var callback = function(result, status) {
 	    if (status === kakao.maps.services.Status.OK) {
@@ -563,9 +564,15 @@
 	};
 	// '서울 서초구 서초동 1303-34'에 게시글의 모임장소(db값) 넣어준다.**********************************************************
 	geocoder.addressSearch("<%=dto.getDog_lost_address()%>", callback);
-	
-	var marker = new kakao.maps.Marker();
-
+	 var imageSrc = '/resources/img/missingboard/lostdogLocation.png', // 마커이미지의 주소입니다    
+     imageSize = new kakao.maps.Size(100, 100), // 마커이미지의 크기입니다
+     imageOption = {offset: new kakao.maps.Point(50, 100)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+     var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);  
+     
+     var marker = new kakao.maps.Marker({
+        map: map,
+        image: markerImage // 마커이미지 설정
+	});
 	//검색 하고 마커 찍어주는 함수
 	function setMarker(fa, ga){
 		//검색창에서 클릭한 좌표로 이동된 지도를 다시 생성
