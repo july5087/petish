@@ -282,7 +282,7 @@
 						
 						<div class="comment-and-button">
 							<div class="comment-form">							
-							<textarea onkeyup="enterKeyCheck();" id="CONTENT" name="content" rows="4" class="form-control "></textarea>						
+							<textarea id="CONTENT" name="content" rows="4" class="form-control "></textarea>						
 							</div>
 							
 							<div class="comment-button-div">

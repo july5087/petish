@@ -193,14 +193,14 @@
 			<div style="padding: 1rem"></div>	
 			
 			<!-- 검색 -->
-			<form id="searchForm" action="/dog/missingboard/list" style="margin-right: 15px;">
+			<form id="searchForm" action="/dog/missingboard" style="margin-right: 15px;">
 				<div aria-label="Page navigation example" 
 					class="d-flex justify-content-center">					
 					<div class="col-md-2 col-lg-2">
 						<div class="form-group">	           				
 								<select id="state" name="type" class="form-control">
 			           				<option value=""
-		           					<c:out value="${pageMaker.cri.type == null ? 'selected':''}"/>>--</option>
+		           					<c:out value="${pageMaker.cri.type == null ? 'selected':''}"/>>----------</option>
 		           					<option value="T"
 		           					<c:out value="${pageMaker.cri.type eq 'T' ? 'selected':''}"/>>지역</option>	           				
 		           					<option value="W"
@@ -235,7 +235,7 @@
 	 
 	<div style="padding: 1rem"></div>
 	<!-- 페이징 -->
-	<form id='actionForm' action="/dog/missingboard/list" method='get'>
+	<form id='actionForm' action="/dog/missingboard" method='get'>
 		<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'>
 		<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
 		<input type='hidden' name='type' value='<c:out value="${pageMaker.cri.type }"/>'>
@@ -452,9 +452,9 @@
 				 alert("키워드를 입력하세요");
 				 return false;
 			 }
-
+			 
 			 //검색 결과 페이지 1페이지
-			 searchForm.find("input[name='pageNum']").val("1");
+			 searchForm.find("input[name='pageNum']").val("1");			 
 			 e.preventDefault();
 
 			 searchForm.submit();
