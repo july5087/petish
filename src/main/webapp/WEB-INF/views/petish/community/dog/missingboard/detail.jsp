@@ -282,16 +282,14 @@
 						
 						<div class="comment-and-button">
 							<div class="comment-form">							
-							<textarea id="CONTENT" name="content" rows="4" class="form-control "></textarea>						
+							<textarea onkeyup="enterKeyCheck();" id="CONTENT" name="content" rows="4" class="form-control "></textarea>						
 							</div>
 							
 							<div class="comment-button-div">
 								<button class="re btn btn-template-outlined comment-input-button" id="input_data">댓글 등록</button>
 							</div>
 						</div>
-					</div>
-					
-						
+					</div>		
 				</div>
 			</div>
 			
