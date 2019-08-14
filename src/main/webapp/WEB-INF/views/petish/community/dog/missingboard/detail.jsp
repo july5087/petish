@@ -277,19 +277,24 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-12">
-					<div class="form-group">
+					<div class="form-group comment-div">
 						<label for="comment">내 용 <span class="required text-primary">*</span></label>
-						<textarea id="CONTENT" name="content" rows="4" class="form-control"></textarea>
+						
+						<div class="comment-and-button">
+							<div class="comment-form">							
+							<textarea id="CONTENT" name="content" rows="4" class="form-control "></textarea>						
+							</div>
+							
+							<div class="comment-button-div">
+								<button class="re btn btn-template-outlined comment-input-button" id="input_data">댓글 등록</button>
+							</div>
+						</div>
 					</div>
+					
+						
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-sm-12 text-right">
-					<button class="re btn btn-template-outlined custom-button" id="input_data">
-						<i class="fa fa-comment-o"></i> 댓글 등록
-					</button>
-				</div>
-			</div>
+			
 		</form>
 		<!-- comment insert form END -->
          

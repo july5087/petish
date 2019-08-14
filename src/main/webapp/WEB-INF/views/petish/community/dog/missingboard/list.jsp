@@ -122,11 +122,11 @@
 							<%
 								if (dto.getFound() == 0) {
 							%>
-							<td><span class="found btn btn-sm btn-danger">미발견</span></td>
+							<td><span class="found btn btn-sm btn-danger found-buttons">미발견</span></td>
 							<%
 								} else {
 							%>
-							<td><span class="found btn btn-sm btn-info">발견</span></td>
+							<td><span class="found btn btn-sm btn-info found-buttons">발견</span></td>
 							<%
 								}
 							%>
@@ -138,7 +138,7 @@
 							<td colspan="10">
 								<a href="/dog/missingboard/<%=dto.getId()%>" class="title" id="title">[<%=addrSplit%>]
 									<%=dto.getDog_species()%> / <%=dto.getDog_gender()%> / <%=dto.getDog_age()%></a>
-								<a style="padding: 0.15rem"></a> <span class="badge badge-secondary"><%=dto.getCommentCount() %></span></td>
+								<a style="padding: 0.15rem"></a> <span class="badge badge-secondary comment-count"><%=dto.getCommentCount() %></span></td>
 							<td>
 								<div class="nav navbar-nav ml-auto">
 									<a href="#" data-toggle="dropdown" class="dropdown writer"><%=dto.getNickname() %></a>

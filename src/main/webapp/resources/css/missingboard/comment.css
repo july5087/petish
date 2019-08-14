@@ -47,6 +47,28 @@
 .modify-remove-dropdown-menu{
     min-width: 6rem!important;
 }
-.comment-input-form{
+.comment-div{
+	display:inline-block!important;
+	width:100%!important;
+	max-width:100%!important;
+}
+
+.comment-form{
+	display:inline-block!important;
 	width:85%!important;
+}
+.comment-button-div{
+	display:inline-block;
+	width:12%;
+	margin-left:10px;
+	vertical-align: top;
+}
+.comment-and-button{
+	width:100%;
+	display:block
+}
+.comment-input-button{
+	width:100px;
+	height:110px;
+	font-size:1rem!important;
 }
