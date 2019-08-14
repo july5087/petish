@@ -55,7 +55,7 @@ function commentList(param) {
 					output += '<i class="fa fa-history" style="padding:0 0.2rem 0 1.5rem; "></i>' + result[i].updated_date + ' 수정됨</a>';
 				}
 				
-				output += '<input type="hidden" class="form-control" id="commentContent'+result[i].id+'" value="'+result[i].content+'">';
+				output += '<input type="hidden" class="form-control comment-input-form" id="commentContent'+result[i].id+'" value="'+result[i].content+'">';
 				output += '<div id="commentBlock'+result[i].id+'">';
 				
 				output += '<div id="commentInnerText'+result[i].id+'" class="modify-comment">' + result[i].content +'</div>';   
