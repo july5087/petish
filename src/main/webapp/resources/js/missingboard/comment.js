@@ -188,25 +188,6 @@ function buttonChange(id) {
 	$('#commentModifyBtn'+id+'').attr({"type":"button"});
 }
 
-//엔터키로 댓글 입력
-function enterKeyCheck(){
-	if (window.event.keyCode == 13) {
-		
-		$.ajax({
-			type: "GET",
-			url: "/api/users/authenticate",
-			success: function(data) {
-				insertComment();
-			},
-			error: function(error) {
-				alert("로그인이 필요합니다.");
-				$('#login-modal').modal("show");
-			}
-		});
-		event.preventDefault();
-   }
-}
-
 //댓글 등록 시 로그인 확인
 $('#input_data').click(function(event){	
 	$.ajax({
