@@ -37,9 +37,10 @@
 <link href="/resources/css/missingboard/list.css" rel="stylesheet">
 <script src="/resources/js/missingboard/list.js"></script>
 
+<link href="/resources/css/fonts.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="font-family: 'Do Hyeon', sans-serif;">
 	<div id="all">
 
 		<%@ include file="/WEB-INF/views/commons/top.jspf"%>
