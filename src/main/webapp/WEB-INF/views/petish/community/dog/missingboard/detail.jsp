@@ -64,6 +64,7 @@
 <link href="/resources/css/commons/kakaomap.css?ver=1" rel="stylesheet">
 <link rel="stylesheet" href="/resources/css/mypage/mypage.css">
 <link href="/resources/css/missingboard/detail.css" rel="stylesheet">
+<link href="/resources/css/missingboard/comment.css" rel="stylesheet">
 <link href="/resources/css/report.css" rel="stylesheet">
 
 <link href="/resources/css/fonts.css" rel="stylesheet">
@@ -134,7 +135,7 @@
                   /
                   <%=dto.getDog_age()%></h2>
             </div>
-
+            
             <!-- 게시 정보 -->
             <table>
                <tr>
@@ -234,24 +235,17 @@
 
         <!-- 댓글창 -->
 		<div id="comments">
-						
-			<% if (commentCount == 0) {%>
-			<h4>댓글  0</h4>
-			<a>등록된 댓글이 없습니다. 댓글을 작성해주세요!</a>
-			<script>$('.d-flex').css("display","none")</script>		
-			<%}
 			
-			else { %>
+			<!-- 댓글 갯수 -->
 			<h4 class="text-uppercase" id="commentCount">
 			<input type="text" id="commentCountVal">
 			</h4>
-			
-			<section class="bar bg-gray mb-0">			
+			<!-- 댓글 내용 -->
+			<section>			
 			<div id="commentList" class="row comment">
 			<!-- 댓글 출력 -->
 			</div>			
 			</section>
-			<%} %>
 			
 			<!-- 댓글 페이징 -->
 			<div style="padding:3rem">
