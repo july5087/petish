@@ -46,6 +46,7 @@
 		<result property="updated_date" column="UPDATED_DATE" />
 		<result property="found" column="FOUND" />
 
+		<result property="user_id" column="USER_ID" />
 		<result property="nickname" column="NICKNAME" />
 		<result property="dog_species" column="DOG_SPECIES" />
 	</resultMap>
@@ -103,11 +104,11 @@
 	<!-- 게시판 리스트(페이징 + 검색) -->
 	<select id="getDogLostList" resultMap="DogLostPostListDTO">
 	<![CDATA[
-		SELECT ID, DOG_AGE, DOG_GENDER, DOG_LOST_ADDRESS, VIEW_COUNT, CREATE_DATE, UPDATED_DATE, FOUND, SPECIES_ID, DOG_SPECIES, NICKNAME
+		SELECT ID, DOG_AGE, DOG_GENDER, DOG_LOST_ADDRESS, VIEW_COUNT, CREATE_DATE, UPDATED_DATE, FOUND, SPECIES_ID, DOG_SPECIES, USER_ID, NICKNAME
 		FROM 
-			(SELECT rownum rn, ID, DOG_AGE, DOG_GENDER, DOG_LOST_ADDRESS, VIEW_COUNT, CREATE_DATE, UPDATED_DATE, FOUND, SPECIES_ID, DOG_SPECIES, NICKNAME
+			(SELECT rownum rn, ID, DOG_AGE, DOG_GENDER, DOG_LOST_ADDRESS, VIEW_COUNT, CREATE_DATE, UPDATED_DATE, FOUND, SPECIES_ID, DOG_SPECIES, USER_ID, NICKNAME
     		FROM
-    			(SELECT post.ID, post.DOG_AGE, post.DOG_GENDER, post.DOG_LOST_ADDRESS, post.VIEW_COUNT, post.CREATE_DATE, post.UPDATED_DATE, post.FOUND, post.SPECIES_ID, species.DOG_SPECIES, u.NICKNAME
+    			(SELECT post.ID, post.DOG_AGE, post.DOG_GENDER, post.DOG_LOST_ADDRESS, post.VIEW_COUNT, post.CREATE_DATE, post.UPDATED_DATE, post.FOUND, post.SPECIES_ID, species.DOG_SPECIES, post.USER_ID, u.NICKNAME
 				FROM dog_lost_post_tb post, dog_species_tb species, user_tb u
 				WHERE post.DELETED=0 AND species.ID=post.SPECIES_ID AND u.ID=post.USER_ID
 				ORDER BY post.FOUND ASC, post.CREATE_DATE DESC
