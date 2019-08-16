@@ -27,6 +27,7 @@ select hamster.id, hamster.title, hamster.content, hamster.created_date, hamster
 hamster.view_count, hamster.category_id, category.category_name, hamster.user_id, u.nickname
 from hamster_post_tb hamster, user_tb u, etc_category_tb category
 where hamster.deleted=0 and hamster.user_id = u.id and hamster.category_id = category.id
+order by hamster.id desc
 </select>
 
 <select id="getPostDetail" resultMap="HamsterPostResponseDTO">

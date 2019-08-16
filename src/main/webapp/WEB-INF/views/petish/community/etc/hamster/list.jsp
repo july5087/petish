@@ -271,7 +271,7 @@
 				   $('#login-modal').modal("show");
 
 			   <%}else{%>
-			   		window.location.href='/dog/missingboard/writeForm';
+			   		window.location.href='/etc/hamster/writeForm';
 			   <%}%>
 		   });
 

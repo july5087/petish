@@ -910,6 +910,5 @@
 	}
 	
 	</script>
-<!— </div> —>
 </body>
 </html>

@@ -1,14 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
-
+<%@ page import="java.io.*"%>
 <%@ page import="com.community.petish.community.user.dto.response.LoginedUser"%>
 <%@ page import="com.community.petish.community.etc.hamster.dto.*"%>
 
-<%
-	LoginedUser user = (LoginedUser) session.getAttribute("LOGIN_USER");
-	String userName = user.getUsername();
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,10 +18,26 @@
 
 <link rel="stylesheet" href="/resources/css/gatherboard/write-modify.css">
 <link rel="stylesheet" href="/resources/css/commons/kakaomap.css">
+<link href="/resources/css/fonts.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="font-family: 'Do Hyeon', sans-serif;">
 	<%@ include file="/WEB-INF/views/commons/top.jspf"%>
+	<%
+		response.setContentType("text/html; charset=UTF-8");
+
+		//로그인 확인
+		if(loginedUser == null){
+			out.println("<script>");
+			out.println("location.href='/dog/missingboard/list'");
+			out.println("</script>");
+		}
+	
+		else{
+			LoginedUser user = (LoginedUser) session.getAttribute("LOGIN_USER");
+			Long userId = user.getId();
+		}
+	%>
 	<div id="all">
 		<div id="heading-breadcrumbs">
 			<div class="container">
@@ -53,24 +65,38 @@
 									class="btn btn-template-outlined">목록</a>
 							</div>
 							
-							<form id="" action="/etc/hamster/writeForm" method="post">
+							<form id="write_form" action="/etc/hamster/register" method="post">
 							
-							<input type="hidden" name="USERNAME" value="<%=userName%>">
+							<input type="hidden" name="user_id" value=<%=loginedUser.getId()%>>
 
+							<div class="row">
+								<div class="col-sm-6 col-md-2">
+									<div class="form-group">
+										<label for="category">지역</label> 
+										<select id="category_id" class="form-control" name="category_id">
+											<option value="0">카테고리 선택</option>
+											<option value="1">질문</option>
+											<option value="2">일상</option>
+											<option value="3">웃긴자료</option>
+											<option value="4">정보</option>
+										</select>
+									</div>
+								</div>
+							</div>
+									
 							<div class="row">
 								<div class="col-md-12">
 									<div class="form-group">
-										<label for="password_old">제목</label> <input id="password_old"
-											name="TITLE" type="text" class="form-control">
-
+										<label>제목</label>
+										<input id="password_old" name="title" type="text" class="form-control">
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="form-group">
-										<label for="password_1">내용</label>
-										<textarea id="summernote" name="CONTENT" class="form-control"></textarea>
+										<label>내용</label>
+										<textarea id="summernote" name="content" class="form-control"></textarea>
 									</div>
 								</div>
 

@@ -46,14 +46,21 @@ public class HamsterPostController {
 	@RequestMapping("/writeForm")
 	public String hamsterPostWriteForm() {
 		
-		return "petish/comminity/etc/hamster/write_form";
+		return "petish/community/etc/hamster/write_form";
 	}
 	
 	//게시글 입력
 	@PostMapping("/register")
 	public String register(HamsterPostRequestDTO dto, Model model, RedirectAttributes rttr){
-			
-		return "petish/comminity/etc/hamster/"+dto.getId();
+		
+		int result = service.register(dto);
+		
+		System.out.println("result : " + result);
+		
+		model.addAttribute("dto",  dto);
+		
+		//return "petish/comminity/etc/hamster/"+dto.getId();
+		return "petish/community/etc/hamster/list";
 	}
 	
 	//게시글 수정 폼
