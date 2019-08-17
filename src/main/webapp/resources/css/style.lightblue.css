@@ -849,7 +849,7 @@ header.nav-holder.sticky {
 
 .btn-template-main {
   background: #38a7bb;
-  border: 1px solid #38a7bb !important;
+  border: 1px solid #38a7bb;
   color: #fff !important;
   border-radius: 0 !important;
   text-decoration: none;
