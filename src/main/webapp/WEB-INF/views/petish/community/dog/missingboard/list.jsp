@@ -72,10 +72,10 @@
 
 </head>
 
-<body style="font-family: 'Do Hyeon', sans-serif;">
+<body class="bg-light" style="font-family: 'Do Hyeon', sans-serif;">
 	<div id="all">
 
-		<%@ include file="/WEB-INF/views/commons/top.jspf"%>
+		<%@ include file="/WEB-INF/views/commons/dog_top.jspf"%>
 		<%
 		//접속 아이디
 		Long userId = null;
@@ -88,6 +88,7 @@
 	    	System.out.println("유저닉네임 : " + userNickname); 
 	    }
       %>
+		<div class="content-fluid body-section">
 
 		<form action="/dog/missingboard/<%=pageNum %>" method="post">
 			<input type="hidden" value=<%=pageNum %>>
@@ -266,59 +267,57 @@
 					</div>   
 				</div>
 			</form>	
-		</div>		
-	</div>
-	<!-- all -->           
-	 
-	<div style="padding: 1rem"></div>
-	<!-- 페이징 -->
-	<form id='actionForm' action="/dog/missingboard" method='get'>
-		<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'>
-		<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
-		<input type='hidden' name='type' value='<c:out value="${pageMaker.cri.type }"/>'>
-		<input type='hidden' name='keyword' value='<c:out value="${pageMaker.cri.keyword }"/>'>
-	</form>
-	
-	<!-- 쪽지 보내기 모달창 -->
-   <div id="message-modal" tabindex="-1" role="dialog" aria-hidden="true"
-        class="modal fade">
-        <div role="document" class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 align="center" class="modal-title">쪽지보내기</h4>
-                    <button type="button" data-dismiss="modal" aria-label="Close"
-                        class="close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                <form id="message_form" method="POST">
-                	
-			   		<%-- <input type="hidden" name="messageSender_id" id="sender_id" value=<%=userId%>> --%>
-                    <div class="form-group">
-                        <label>받는사람</label>
-                        <input class="form-control" name='messageReceiver_nickname' readonly>
-                    </div>
-                    
-                    <input type="hidden" name="messageReceiver_id">
-                    
-                    <div class="form-group">
-                        <label>제목</label>
-                        <input class="form-control" name='messageTitle'>
-                    </div>
-                    <div class="form-group">
-                        <label>내용</label>
-                        <textarea name='messageContent' rows="10" class="form-control"></textarea>
-                    </div>
-                    <p class="text-center">   
-                        <input type="submit" value="보내기" id="modalSendBtn" class="btn btn-outline-primary">
-                    </p>
-                </form>
-                </div>
-            </div>
+		</div>
+
+    <div style="padding: 1rem"></div>
+    <!-- 페이징 -->
+    <form id='actionForm' action="/dog/missingboard" method='get'>
+      <input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'>
+      <input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
+      <input type='hidden' name='type' value='<c:out value="${pageMaker.cri.type }"/>'>
+      <input type='hidden' name='keyword' value='<c:out value="${pageMaker.cri.keyword }"/>'>
+    </form>
+
+    <!-- 쪽지 보내기 모달창 -->
+    <div id="message-modal" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade">
+      <div role="document" class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 align="center" class="modal-title">쪽지보내기</h4>
+              <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+                <span aria-hidden="true">×</span>
+              </button>
+          </div>
+          <div class="modal-body">
+            <form id="message_form" method="POST">
+              <div class="form-group">
+                  <label>받는사람</label>
+                  <input class="form-control" name='messageReceiver_nickname' readonly>
+              </div>
+              <input type="hidden" name="messageReceiver_id">
+
+              <div class="form-group">
+                <label>제목</label>
+                <input class="form-control" name='messageTitle'>
+              </div>
+              <div class="form-group">
+                  <label>내용</label>
+                  <textarea name='messageContent' rows="10" class="form-control"></textarea>
+              </div>
+              <p class="text-center">
+                  <input type="submit" value="보내기" id="modalSendBtn" class="btn btn-outline-primary">
+              </p>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
-    
+  
+  </div>
+	<!-- all -->
+  </div>
+
+
 	<script>
 	//반응형
 	function resize(){
