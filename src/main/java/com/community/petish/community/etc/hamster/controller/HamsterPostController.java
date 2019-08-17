@@ -73,8 +73,7 @@ public class HamsterPostController {
 	
 	//게시글 입력 폼
 	@RequestMapping("/writeForm")
-	public String hamsterPostWriteForm() {
-		
+	public String hamsterPostWriteForm() {		
 		return "petish/community/etc/hamster/write_form";
 	}
 	
@@ -95,14 +94,33 @@ public class HamsterPostController {
 	@RequestMapping("/modifyForm/{id}")
 	public String modifyForm(@PathVariable Long id, Model model) {
 		
-		return "petish/comminity/etc/hamster/modify_form";
+		HamsterPostResponseDTO dto = service.getPostDetail(id);
+		
+		model.addAttribute("dto",  dto);
+		
+		return "petish/community/etc/hamster/modify_form";
 	}
 	
 	//게시글 수정
 	@PostMapping("/modify")
 	public String modify(HamsterPostRequestDTO dto, Model model, RedirectAttributes rttr){
 		
-		return "petish/comminity/etc/hamster/"+dto.getId();
+		int result = service.modify(dto);
+		
+		if(result == 1) {
+			log.info("수정 성공");
+			rttr.addFlashAttribute("modify_msg", "success");			
+		}
+		else {
+			log.info("수정 실패");
+			rttr.addFlashAttribute("modify_msg", "failure");
+		}
+		
+		model.addAttribute("dto",  dto);
+		
+		rttr.addFlashAttribute("result", dto.getId());
+		
+		return "redirect:/etc/hamster/"+dto.getId();
 	}
 	
 	//게시글 삭제

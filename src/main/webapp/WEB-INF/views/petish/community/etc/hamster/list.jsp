@@ -36,7 +36,7 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 
-
+<link href="/resources/css/etc/list.css" rel="stylesheet">
 <link href="/resources/css/missingboard/list.css" rel="stylesheet">
 <link href="/resources/css/fonts.css" rel="stylesheet">
 </head>
@@ -101,7 +101,7 @@
 						</div>
 						
 						<input type="hidden" name="type" value="S">
-						<input type="hidden" name="keyword" id="categoryKeyword" value="<c:out value='${pageMaker.cri.keyword}'/>">
+						<input type="hidden" name="keyword" id="categoryKeyword">
 						
 					</form>						
 				</div>
@@ -109,12 +109,12 @@
 				<div id="customer-order" class="col-lg-20">
 					<table class="table" id="post" style="text-align: center">
 						<tr>
-							<th width="100px" class="postId border-top-0" name="mobile-none">번호</th>
-							<th width="150px" class="postCategory border-top-0">카테고리</th>
-							<th width="500px" class="postTitle border-top-0" border-top-0" colspan="10">제목</th>
-							<th width="150px" class="postWriter border-top-0">작성자</th>
-							<th width="150px" class="postDate border-top-0" name="mobile-none">작성일</th>
-							<th width="100px" class="postView border-top-0" name="mobile-none">조회</th>
+							<th width="100px" class="postId border-top-0 titles" name="mobile-none">번호</th>
+							<th width="150px" class="postCategory border-top-0 titles">카테고리</th>
+							<th width="500px" class="postTitle border-top-0 titles" border-top-0" colspan="10">제목</th>
+							<th width="150px" class="postWriter border-top-0 titles">작성자</th>
+							<th width="150px" class="postDate border-top-0 titles" name="mobile-none">작성일</th>
+							<th width="100px" class="postView border-top-0 titles" name="mobile-none">조회</th>
 						</tr>
 						
 						<%
@@ -195,7 +195,7 @@
 						<div class="form-group">	           				
 								<select id="state" name="type" class="form-control">
 			           				<option value=""
-		           					<c:out value="${pageMaker.cri.type == null ? 'selected':''}"/>>--</option>
+		           					<c:out value="${pageMaker.cri.type == null ? 'selected':''}"/>>------</option>
 		           					<option value="T"
 		           					<c:out value="${pageMaker.cri.type eq 'T' ? 'selected':''}"/>>제목</option>	           				
 		           					<option value="W"
@@ -209,7 +209,7 @@
 	    			<div class="panel panel-default sidebar-menu">
 	    				<div class="panel-body">
 	           				<div class="input-group">
-			           			<input type='text' name='keyword' placeholder="Search" class="form-control" 
+			           			<input type='text' name='keyword' id='searchInput' placeholder="Search" class="form-control" 
 			           			value='<c:out value="${pageMaker.cri.keyword}"/>' />
 			           			<input type='hidden' name='pageNum'
 			           			value='<c:out value="${pageMaker.cri.pageNum}"/>' />

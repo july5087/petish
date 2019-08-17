@@ -76,8 +76,6 @@ where rn > (#{pageNum} -1) * #{amount}
 
 </select>
 
-
-
 <!-- 게시글 조회 -->
 <select id="getPostDetail" parameterType="Long" resultMap="HamsterPostResponseDTO">
 select hamster.id, hamster.title, hamster.content, hamster.created_date, hamster.updated_date, hamster.view_count, hamster.category_id, category.category_name, hamster.user_id, u.nickname
@@ -94,7 +92,7 @@ values(((select NVL(max(id), 0) from HAMSTER_POST_TB) + 1), #{title}, #{content}
 <!-- 게시글 수정 -->
 <update id="updatePost" parameterType="com.community.petish.community.etc.hamster.dto.HamsterPostRequestDTO">
 update hamster_post_tb
-SET title=#{title}, content=#{content}, updated_date=#{updated_date}, category_id=#{category_id}
+SET title=#{title}, content=#{content}, updated_date=sysdate, category_id=#{category_id}
 WHERE id=#{id}
 </update>
 

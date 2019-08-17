@@ -83,6 +83,7 @@
 
 				<!-- 글 제목 -->
 				<div class="panel-heading">
+					<a class="btn btn-sm btn-template-main catrgory-btn"><%=dto.getCategory_name()%></a>
 					<h2 class="h3 panel-title"><%=dto.getTitle()%></h2>
 				</div>
 
@@ -203,7 +204,7 @@
 								class="d-flex justify-content-left">
 								<button class="btn btn-template-outlined custom-button">
 									<i class="fa fa-pencil"></i> <a
-										href="/etc/hamster/<%=dto.getId()%>">수정 </a>
+										href="/etc/hamster/modifyForm/<%=dto.getId()%>">수정 </a>
 								</button>
 								<button type="submit"
 									class="btn btn-template-outlined custom-button">
