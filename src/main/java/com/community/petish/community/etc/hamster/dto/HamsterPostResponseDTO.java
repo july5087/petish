@@ -18,4 +18,6 @@ public class HamsterPostResponseDTO {
 	
 	private Long user_id;
 	private String nickname;
+	
+	private int commentCount; //댓글 갯수
 }

@@ -1,0 +1,21 @@
+.date-view {
+	width: 100%;
+	padding-left: 2rem !important;
+	padding-right: 2rem !important;
+	text-align: right;
+}
+
+.nickname {
+	width: 150px;
+	text-align: left;
+	padding-left: 0.7rem;
+}
+
+button.btn.btn-template-outlined.custom-button {
+	margin-right: 2rem;
+	float: right;
+}
+
+.writerDetail {
+	float: right;
+}

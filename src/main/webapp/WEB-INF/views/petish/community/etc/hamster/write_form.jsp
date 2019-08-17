@@ -61,7 +61,7 @@
 						<div class="box mt-5" style="margin-top: 20px;">
 							<div class="heading" id="head">
 								<h3 id="title" class="text-uppercase">글 쓰기</h3>
-								<a href="/dog/gatherboard" id="listBtn"
+								<a href="/etc/hamster" id="listBtn"
 									class="btn btn-template-outlined">목록</a>
 							</div>
 							
@@ -72,7 +72,7 @@
 							<div class="row">
 								<div class="col-sm-6 col-md-2">
 									<div class="form-group">
-										<label for="category">지역</label> 
+										<label for="category">카테고리</label> 
 										<select id="category_id" class="form-control" name="category_id">
 											<option value="0">카테고리 선택</option>
 											<option value="1">질문</option>

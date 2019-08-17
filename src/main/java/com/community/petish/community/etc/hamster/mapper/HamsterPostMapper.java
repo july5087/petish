@@ -2,17 +2,16 @@ package com.community.petish.community.etc.hamster.mapper;
 
 import java.util.List;
 
+import com.community.petish.community.etc.hamster.dto.Criteria;
 import com.community.petish.community.etc.hamster.dto.HamsterPostRequestDTO;
 import com.community.petish.community.etc.hamster.dto.HamsterPostResponseDTO;
 
 public interface HamsterPostMapper {
 	// 게시글 수
-	//int getPostCount(Criteria cri);
-	int getPostCount();
+	int getPostCount(Criteria cri);
 
 	// 게시글 리스트
-	//List<HamsterPostResponseDTO> getPostList(Criteria cri);
-	List<HamsterPostResponseDTO> getPostList();
+	List<HamsterPostResponseDTO> getPostList(Criteria cri);
 	
 	// 게시글 조회
 	HamsterPostResponseDTO getPostDetail(Long id);

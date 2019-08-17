@@ -11,20 +11,21 @@
 	List<HamsterPostResponseDTO> dtoList = (List<HamsterPostResponseDTO>) request.getAttribute("dtoList");
 
 	//페이지  번호
-	/* int pageNum = 1;
-	if((HamsterPostResponseDTO)request.getAttribute("pageMaker") != null){
-		HamsterPostResponseDTO pageDTO = (HamsterPostResponseDTO)request.getAttribute("pageMaker");
-		pageNum = pageDTO.getCri().getPageNum();	
-		request.setAttribute("pageNum", pageNum);
-	}	 */
+	int pageNum = 1;
+	if((HamsterPostPageDTO)request.getAttribute("pageMaker") != null){
+		HamsterPostPageDTO pageDTO = (HamsterPostPageDTO)request.getAttribute("pageMaker");
+
+		pageNum = pageDTO.getCri().getPageNum();
+		request.setAttribute("pageNum", pageNum);		
+	}	 
 	//게시판 아이디 설정
-	request.setAttribute("boardId", "10");
+	request.setAttribute("boardId", "9");
 %>
 
 <!DOCTYPE html>
 <html>
 <head>
-<title>실종견 게시판</title>
+<title>햄스터 게시판</title>
 
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,9 +36,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 
-<link href="/resources/css/missingboard/list.css" rel="stylesheet">
-<script src="/resources/js/missingboard/list.js"></script>
 
+<link href="/resources/css/missingboard/list.css" rel="stylesheet">
 <link href="/resources/css/fonts.css" rel="stylesheet">
 </head>
 
@@ -58,9 +58,9 @@
 	    }
       %>
 
-		<%-- <form action="/dog/missingboard/<%=pageNum %>" method="post">
+		<form action="/etc/hamster/<%=pageNum %>" method="post">
 			<input type="hidden" value=<%=pageNum %>>
-		</form> --%>
+		</form>
 
 		<div id="heading-breadcrumbs">
 			<div class="container">
@@ -84,15 +84,35 @@
 				<div style="text-align: right; margin: 1rem">
 					<button class="btn btn-template-outlined write-button" id="writeBtn" >글쓰기
 					</button>
+					
+					<form id="categoryForm" action="/etc/hamster" method="post">		
+						<div class="row">
+							<div class="col-sm-6 col-md-2">
+								<div class="form-group">
+									<select id="category_id" class="form-control post-category" name="category_id" onchange="categoryChange()">
+										<option value="0">카테고리 선택</option>
+										<option value="1">질문</option>
+										<option value="2">일상</option>
+										<option value="3">웃긴자료</option>
+										<option value="4">정보</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						
+						<input type="hidden" name="type" value="S">
+						<input type="hidden" name="keyword" id="categoryKeyword" value="<c:out value='${pageMaker.cri.keyword}'/>">
+						
+					</form>						
 				</div>
 
 				<div id="customer-order" class="col-lg-20">
 					<table class="table" id="post" style="text-align: center">
 						<tr>
 							<th width="100px" class="postId border-top-0" name="mobile-none">번호</th>
-							<th width="150px" class="postCategory border-top-0" name="mobile-none">카테고리</th>
-							<th width="500px" class="postTitle border-top-0" border-top-0" colspan="10" name="mobile-none">제목</th>
-							<th width="150px" class="postWriter border-top-0" name="mobile-none">작성자</th>
+							<th width="150px" class="postCategory border-top-0">카테고리</th>
+							<th width="500px" class="postTitle border-top-0" border-top-0" colspan="10">제목</th>
+							<th width="150px" class="postWriter border-top-0">작성자</th>
 							<th width="150px" class="postDate border-top-0" name="mobile-none">작성일</th>
 							<th width="100px" class="postView border-top-0" name="mobile-none">조회</th>
 						</tr>
@@ -109,8 +129,8 @@
 							<td class="postId"><%=dto.getCategory_name() %></td>
 														
 							<td colspan="10">
-								<a href="/dog/missingboard/<%=dto.getId()%>" class="title" id="title"><%=dto.getTitle() %></a>
-								<a style="padding: 0.15rem"></a><span class="badge badge-secondary comment-count">댓글수</span>
+								<a href="/etc/hamster/<%=dto.getId()%>" class="title" id="title"><%=dto.getTitle() %></a>
+								<a style="padding: 0.15rem"></a><span class="badge badge-secondary comment-count"><%=dto.getCommentCount() %></span>
 							</td>
 							
 							<td>
@@ -141,12 +161,12 @@
 					</table>
 					
 					<!-- 페이징  -->			
-					<%-- <div aria-label="Page navigation example" class="d-flex justify-content-center">
+					<div aria-label="Page navigation example" class="d-flex justify-content-center">
 						<ul class="pagination">
 						
 						<c:if test="${pageMaker.prev }">
 							<li class="page-item"><a href="${pageMaker.startPage-1 }" name="pagination_button" class="page-link">
-							<i class="fa fa-angle-double-legt"></i></a></li>
+							<i class="fa fa-angle-double-left"></i></a></li>
 						</c:if>
 						
 						<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
@@ -161,14 +181,14 @@
 						</c:if>
 						
 						</ul>
-					</div> --%>
+					</div>
 				</div>
 			</div>	
 
 			<div style="padding: 1rem"></div>	
 			
 			<!-- 검색 -->
-			<%-- <form id="searchForm" action="/dog/missingboard/list" style="margin-right: 15px;">
+			<form id="searchForm" action="/etc/hamster/" style="margin-right: 15px;">
 				<div aria-label="Page navigation example" 
 					class="d-flex justify-content-center">					
 					<div class="col-md-2 col-lg-2">
@@ -177,9 +197,11 @@
 			           				<option value=""
 		           					<c:out value="${pageMaker.cri.type == null ? 'selected':''}"/>>--</option>
 		           					<option value="T"
-		           					<c:out value="${pageMaker.cri.type eq 'T' ? 'selected':''}"/>>지역</option>	           				
+		           					<c:out value="${pageMaker.cri.type eq 'T' ? 'selected':''}"/>>제목</option>	           				
 		           					<option value="W"
-		           					<c:out value="${pageMaker.cri.type eq 'W' ? 'selected':''}"/>>작성자</option>	           				
+		           					<c:out value="${pageMaker.cri.type eq 'W' ? 'selected':''}"/>>작성자</option>
+		           					<option value="C"
+		           					<c:out value="${pageMaker.cri.type eq 'C' ? 'selected':''}"/>>내용</option>		           							           				
 	           					</select>
 	           			</div>
 	           		</div>
@@ -203,19 +225,19 @@
 						</div>
 					</div>   
 				</div>
-			</form>	 --%>
+			</form>
 		</div>		
 	</div>
 	<!-- all -->           
 	 
 	<div style="padding: 1rem"></div>
 	<!-- 페이징 -->
-	<%-- <form id='actionForm' action="/dog/missingboard/list" method='get'>
+	<form id='actionForm' action="/etc/hamster" method='get'>
 		<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'>
 		<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
 		<input type='hidden' name='type' value='<c:out value="${pageMaker.cri.type }"/>'>
 		<input type='hidden' name='keyword' value='<c:out value="${pageMaker.cri.keyword }"/>'>
-	</form> --%>
+	</form>f
 	
 	<!-- 쪽지 보내기 모달창 -->
 	<div id="message-modal" tabindex="-1" role="dialog" aria-hidden="true"
@@ -371,6 +393,8 @@
 		 })
 	});
 	</script>
+	
+	<script src="/resources/js/etc/list.js"></script>
 
 </body>
 </html>

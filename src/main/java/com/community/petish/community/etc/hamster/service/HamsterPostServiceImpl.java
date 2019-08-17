@@ -1,14 +1,15 @@
 package com.community.petish.community.etc.hamster.service;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.community.petish.community.dog.missingboard.dto.DogLostPostResponseListDTO;
+import com.community.petish.community.etc.hamster.dto.Criteria;
 import com.community.petish.community.etc.hamster.dto.HamsterPostRequestDTO;
 import com.community.petish.community.etc.hamster.dto.HamsterPostResponseDTO;
+import com.community.petish.community.etc.hamster.mapper.HamsterCommentMapper;
 import com.community.petish.community.etc.hamster.mapper.HamsterPostMapper;
 
 @Service
@@ -16,28 +17,37 @@ public class HamsterPostServiceImpl implements HamsterPostService {
 	
 	@Autowired
 	private HamsterPostMapper mapper;
+	@Autowired
+	private HamsterCommentMapper commentMapper;
 	
 	// 게시글 수
-	//public int getPostCount(Criteria cri);
-	public int getPostCount() {
-		int count = mapper.getPostCount();
+	public int getPostCount(Criteria cri) {
+		int count = mapper.getPostCount(cri);
 		
 		return count;
 	}
 
 	// 게시글 리스트
-	//List<HamsterPostResponseDTO> getPostList(Criteria cri);
-	public List<HamsterPostResponseDTO> getPostList(){
+	public List<HamsterPostResponseDTO> getPostList(Criteria cri){
 		
-		List<HamsterPostResponseDTO> listDTO = mapper.getPostList();
-		System.out.println(listDTO);
+		System.out.println("[Service]Cri : " + cri);
 		
+		int commentCount = 0;
+		List<HamsterPostResponseDTO> listDTO = mapper.getPostList(cri);
+		
+		for(int i=0; i<listDTO.size(); i++) {
+			HamsterPostResponseDTO dto = listDTO.get(i);
+			commentCount = commentMapper.getCommentCount(dto.getId());
+			dto.setCommentCount(commentCount);
+		}		
 		return listDTO;
 	}
 	
 	// 게시글 조회
 	public HamsterPostResponseDTO getPostDetail(Long id) {
+		
 		HamsterPostResponseDTO dto = mapper.getPostDetail(id);
+		System.out.println("[Service]" + dto);
 		
 		return dto;
 	}
