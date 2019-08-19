@@ -53,11 +53,12 @@
 	<link rel="stylesheet" href="/resources/css/hospital/main_search.css">
 	<link rel="stylesheet" href="/resources/css/commons/kakaomap.css">
 	<link rel="stylesheet" href="/resources/css/top/common.css">
+	<link href="/resources/css/fonts.css" rel="stylesheet"> 
     <script src="/resources/js/region.js"></script>
 	
 </head>
 <%-- <%@ include file="/WEB-INF/views/commons/link.jspf" %> --%>
-<body>
+<body class="bg-light" style="font-family: 'Do Hyeon', sans-serif; letter-spacing: 1.5px; font-weight: 100;">
 <!-- <div id="all"> -->
 <%-- <%@ include file="/WEB-INF/views/commons/top.jspf" %> --%>
 <!-- 		<video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
