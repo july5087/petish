@@ -105,6 +105,15 @@
                     </li>
                     <!-- Cat END -->
                     <!-- Etc -->
+                    <li class="nav-item dropdown pr-2">
+                        <a href="javascript: void(0)" data-toggle="dropdown04" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">기타 반려동물<b class="caret"></b></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a href="/etc/hamster" class="dropdown-item">햄스터</a>
+                            <a href="/etc/hedgehog" class="dropdown-item">고슴도치</a>
+                            <a href="/etc/turtle" class="dropdown-item">거북이</a>
+                        </div>
+                    </li>
+                    <!-- Etc END -->
                     <!-- My Pet -->
                     <li class="nav-item pr-2">
                         <a href="/mypet" class="nav-link">마이펫
