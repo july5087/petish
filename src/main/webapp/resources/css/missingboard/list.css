@@ -37,11 +37,6 @@ button.btn.btn-template-outlined.write-button {
 #state {
 	height: 3rem !important;
 }
-
-.title {
-	color: black;
-}
-
 .comment-count {
 	vertical-align: middle !important;
 	font-size: 0.8rem !important;
@@ -73,6 +68,9 @@ button.btn.btn-template-outlined.write-button {
 
 .showMemberDropMenu:hover .member_dropMenu {
 	display: block;
+}
+#title{
+	color:black!important;
 }
 
 @media ( max-width : 400px ) {

@@ -142,7 +142,7 @@
                   <td>
                      <div class="showMemberDropMenu">
 						<div>
-						<a class="writer"><%=dto.getNickname() %></a>
+						<a class="writer" id="writer"><%=dto.getNickname() %></a>
 						</div>
 						<div class="member_dropMenu">		
 							<a href='/member/detail/<%=dto.getUser_id()%>'>작성게시글 보기</a>							

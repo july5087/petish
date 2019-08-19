@@ -320,6 +320,9 @@ th, td {
 	border-radius: 50%;
 	margin: 0.5rem !important;
 }
+#writer{
+	color:black!important;
+}
 
 /* Fading animation */
 .fade {

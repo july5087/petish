@@ -71,7 +71,7 @@
 						<div style="float:right">
 		                  <button type="submit" class="list btn btn-template-outlined custom-button to-list-btn">
 			              	<i class="fa fa-align-justify"></i>
-			              	<a href="/dog/missingboard"> 글쓰기</a>
+			              	<a href="/dog/missingboard" style="font-size:1rem"> 글쓰기</a>
 			              </button>
 		              	</div>
 		              	<hr style="color:rgba(0,0,0,0.10); margin-top:4rem">
