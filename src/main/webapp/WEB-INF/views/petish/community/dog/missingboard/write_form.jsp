@@ -25,9 +25,7 @@
 		<%@ include file="/WEB-INF/views/commons/dog_top.jspf"%>
 		<%
 			//로그인 확인
-			System.out.println("Login???? : " + loginedUser);
 			if(loginedUser == null){
-				System.out.println("here!!");
 				out.println("<script>");
 				out.println("location.href='/dog/missingboard/list'");
 				out.println("</script>");
