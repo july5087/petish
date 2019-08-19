@@ -110,7 +110,7 @@
          <!-- LEFT COLUMN _________________________________________________________-->
          <div id="blog-post" class="col-md-13">
             
-            <button type="submit" class="list btn btn-template-outlined custom-button">
+            <button type="submit" class="list btn btn-template-outlined custom-button to-list-btn">
                <i class="fa fa-align-justify"></i>
                <a href="<c:url value='/dog/missingboard/'/>"> 목록 </a>
             </button>
@@ -144,16 +144,18 @@
                <tr>
                   <!-- <td><img src="/resources/img/blog-avatar2.jpg" alt="" class="img-fluid rounded-circle" width="70px;" height="70px;"></td> -->
                   <td>
-                     <div class="nav navbar-nav ml-auto">
-                        <a href="#" data-toggle="dropdown" class="nickname showMemberDropMenu"><%=dto.getNickname()%></a>
-                        <div class="member_dropMenu">
-                              <a href="/mypage/member/detail" class="nav-link">게시글보기</a>
-                              <a href="#" id="message-btn" class="nav-link" data-toggle="modal">쪽지보내기</a>
-                        </div>
-                     </div>
+                     <div class="showMemberDropMenu">
+						<div>
+						<a class="writer"><%=dto.getNickname() %></a>
+						</div>
+						<div class="member_dropMenu">		
+							<a href='/member/detail/<%=dto.getUser_id()%>'>작성게시글 보기</a>							
+							<a href="#" id="message-btn" class="showmodal" data-toggle="modal" data-id="<%=dto.getUser_id()%>" data-nick="<%=dto.getNickname() %>">쪽지보내기</a>							
+						</div>				
+					</div>
                   </td>
                   				
-                  <td class=date-view>
+                  <td class="date-view">
                   <i class="fa fa-clock-o"></i>
                   <fmt:formatDate pattern="yyyy-MM-dd hh:mm" value="<%=dto.getCreate_date() %>"/>
                   <i class="fa fa-eye" style="padding-left:2rem; padding-right:0.2rem"></i><%=dto.getView_count()%>

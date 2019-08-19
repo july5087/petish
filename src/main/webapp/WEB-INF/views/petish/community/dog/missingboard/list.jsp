@@ -140,9 +140,11 @@
 									<%=dto.getDog_species()%> / <%=dto.getDog_gender()%> / <%=dto.getDog_age()%></a>
 								<a style="padding: 0.15rem"></a> <span class="badge badge-secondary comment-count"><%=dto.getCommentCount() %></span></td>
 							<td>
-								<div class="nav navbar-nav ml-auto">
-									<a href="#" data-toggle="dropdown" class="dropdown writer"><%=dto.getNickname() %></a>
-									<div class="dropdown-menu">		
+								<div class="showMemberDropMenu">
+									<div>
+									<a href="#" data-toggle="dropdown" class="writer"><%=dto.getNickname() %></a>
+									</div>
+									<div class="member_dropMenu">		
 										<a href='/member/detail/<%=dto.getUser_id()%>'>작성게시글 보기</a>							
 										<a href="#" id="message-btn" class="showmodal" data-toggle="modal" data-id="<%=dto.getUser_id()%>" data-nick="<%=dto.getNickname() %>">쪽지보내기</a>							
 									</div>				
