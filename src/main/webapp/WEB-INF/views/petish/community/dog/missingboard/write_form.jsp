@@ -11,7 +11,7 @@
 <meta name="robots" content="all,follow">
 
 <!-- CSS 파일 추가 -->
-<link rel="stylesheet" type="text/css" href="/resources/css/missingboard/write_modify.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/missingboarfd/write_modify.css">
 <!-- 지도 추가 -->
 <link rel="stylesheet" href="/resources/css/commons/kakaomap.css">
 <!-- datetimepicker 추가 -->
@@ -86,7 +86,7 @@
 									<div class="col-sm-6 col-md-4">
 										<div class="form-group">
 											<label for="SPECIES_ID">종</label>
-											<select name="species_id" id="SPECIES_ID" class="form-control">
+											<select name="species_id" id="SPECIES_ID" class="form-control" style="height:3rem">
 												<option value="0">종 선택</option>
 												<option value="0">--------소형견--------</option>
 												<option value="1">믹스견</option>
