@@ -100,7 +100,7 @@
 								<div class="col-md-12">
 									<div class="form-group">
 										<label>내용</label>
-										<textarea id="summernote" name="content" class="form-control" value=<%=dto.getContent()%>></textarea>
+										<textarea id="summernote" name="content" class="form-control"><%=dto.getContent()%></textarea>
 									</div>
 								</div>
 

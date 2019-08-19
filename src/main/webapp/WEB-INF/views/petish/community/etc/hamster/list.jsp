@@ -63,17 +63,16 @@
 			<input type="hidden" value=<%=pageNum %>>
 		</form>
 
-		<div id="heading-breadcrumbs">
+		<div id="heading-breadcrumbs" style="padding-bottom:0px">
 			<div class="container">
 				<div class="row d-flex align-items-center flex-wrap">
-					<div class="col-md-7">
-						<h1 class="h2">햄스터 게시판</h1>
-					</div>
-					<div class="col-md-5">
-						<ul class="breadcrumb d-flex justify-content-end">
-
-						</ul>
-					</div>
+					<div class="col-md-12" style="margin-top:2rem">
+	                  <div style="float:left"><h1 class="h2">햄스터 게시판</h1></div>
+	                  <div style="float:right">
+		                  <button class="btn btn-template-outlined write-button" id="writeBtn" >글쓰기</button>
+		              </div>
+	                  <hr style="color:rgba(0,0,0,0.10); margin-top:4.5rem">
+	               </div>
 				</div>
 			</div>
 		</div>
@@ -82,10 +81,7 @@
 
 		<div id="content">
 			<div class="container">
-				<div style="text-align: right; margin: 1rem">
-					<button class="btn btn-template-outlined write-button" id="writeBtn" >글쓰기
-					</button>
-					
+				<div style="text-align: right;">
 					<form id="categoryForm" action="/etc/hamster" method="post">		
 						<div class="row">
 							<div class="col-sm-6 col-md-2">
