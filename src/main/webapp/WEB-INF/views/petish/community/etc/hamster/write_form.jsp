@@ -67,7 +67,7 @@
 							
 							<form id="write_form" action="/etc/hamster/register" method="post">
 							
-							<input type="hidden" name="user_id" value=<%=loginedUser.getId()%>>
+							<input type="hidden" name="user_id" value="<%=loginedUser.getId()%>">
 
 							<div class="row">
 								<div class="col-sm-6 col-md-2">

@@ -119,6 +119,7 @@ public class HamsterPostController {
 		model.addAttribute("dto",  dto);
 		
 		rttr.addFlashAttribute("result", dto.getId());
+		System.out.println("[Controller]dto : " + dto);
 		
 		return "redirect:/etc/hamster/"+dto.getId();
 	}
