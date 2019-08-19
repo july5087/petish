@@ -47,7 +47,7 @@
 <body style="font-family: 'Do Hyeon', sans-serif;">
 	<div id="all">
 
-		<%@ include file="/WEB-INF/views/commons/dog_top.jspf"%>
+		<%@ include file="/WEB-INF/views/commons/cat_top.jspf"%>
 		<%
 		//접속 아이디
 		Long userId = null;
