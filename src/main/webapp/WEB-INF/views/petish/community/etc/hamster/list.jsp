@@ -44,7 +44,7 @@
 <body style="font-family: 'Do Hyeon', sans-serif;">
 	<div id="all">
 
-		<%@ include file="/WEB-INF/views/commons/top.jspf"%>
+		<%@ include file="/WEB-INF/views/commons/etc_top.jspf"%>
 		<%
 		//접속 아이디
 		Long userId = null;
@@ -57,6 +57,7 @@
 	    	System.out.println("유저닉네임 : " + userNickname); 
 	    }
       %>
+      <div class="content-fluid body-section">
 
 		<form action="/etc/hamster/<%=pageNum %>" method="post">
 			<input type="hidden" value=<%=pageNum %>>
@@ -89,7 +90,7 @@
 						<div class="row">
 							<div class="col-sm-6 col-md-2">
 								<div class="form-group">
-									<select id="category_id" class="form-control post-category" name="category_id" onchange="categoryChange()">
+									<select id="category_id" class="form-control post-category forms" name="category_id" onchange="categoryChange()">
 										<option value="0">카테고리 선택</option>
 										<option value="1">질문</option>
 										<option value="2">일상</option>
@@ -193,7 +194,7 @@
 					class="d-flex justify-content-center">					
 					<div class="col-md-2 col-lg-2">
 						<div class="form-group">	           				
-								<select id="state" name="type" class="form-control">
+								<select id="state" name="type" class="form-control search-category">
 			           				<option value=""
 		           					<c:out value="${pageMaker.cri.type == null ? 'selected':''}"/>>------</option>
 		           					<option value="T"
@@ -226,10 +227,7 @@
 					</div>   
 				</div>
 			</form>
-		</div>		
-	</div>
-	<!-- all -->           
-	 
+		</div>	 
 	<div style="padding: 1rem"></div>
 	<!-- 페이징 -->
 	<form id='actionForm' action="/etc/hamster" method='get'>
@@ -237,7 +235,7 @@
 		<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
 		<input type='hidden' name='type' value='<c:out value="${pageMaker.cri.type }"/>'>
 		<input type='hidden' name='keyword' value='<c:out value="${pageMaker.cri.keyword }"/>'>
-	</form>f
+	</form>
 	
 	<!-- 쪽지 보내기 모달창 -->
 	<div id="message-modal" tabindex="-1" role="dialog" aria-hidden="true"
@@ -280,9 +278,11 @@
                 </form>
                 <%} %>
                 </div>
-            </div>
-        </div>
+             </div>
+          </div>
+       </div>
     </div>
+ </div>
     
 	<script>
 	$(document).ready(function(){
