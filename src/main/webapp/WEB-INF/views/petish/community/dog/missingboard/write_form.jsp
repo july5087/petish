@@ -11,7 +11,7 @@
 <meta name="robots" content="all,follow">
 
 <!-- CSS 파일 추가 -->
-<link rel="stylesheet" type="text/css" href="/resources/css/missingboard/write_modify.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/missingboarfd/write_modify.css">
 <!-- 지도 추가 -->
 <link rel="stylesheet" href="/resources/css/commons/kakaomap.css">
 <!-- datetimepicker 추가 -->
