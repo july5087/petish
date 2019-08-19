@@ -20,6 +20,9 @@
 	}	 
 	//게시판 아이디 설정
 	request.setAttribute("boardId", "9");
+	
+	//카테고리 번호
+	Long categoryId = 0L;
 %>
 
 <!DOCTYPE html>
@@ -55,7 +58,7 @@
 	    	
 	    	System.out.println("유저아이디 : " + userId);
 	    	System.out.println("유저닉네임 : " + userNickname); 
-	    }
+	    }	    
       %>
 
 		<form action="/dog/freeboard/<%=pageNum %>" method="post">
@@ -95,7 +98,7 @@
 						</div>
 						
 						<input type="hidden" name="type" value="S">
-						<input type="hidden" name="keyword" id="categoryKeyword">
+						<input type="hidden" name="keyword" id="categoryKeyword" value="<%=categoryId %>">
 						
 					</form>						
 				</div>
@@ -115,6 +118,7 @@
 						if(dtoList.size() != 0){
 							for (int i = 0; i < dtoList.size() ; i++) {
 								DogFreePostResponseDTO dto = (DogFreePostResponseDTO) dtoList.get(i);
+								categoryId = dto.getCategory_id();								
 						%>
 						<tr>
 							
