@@ -251,7 +251,6 @@ th, td {
 .poster-title {
 	background-color: #b42233;
 	text-align: center;
-	padding-bottom: 1rem;
 	font-size: 80px;
 	font-weight: 400;
 	letter-spacing: 0.7rem;
@@ -275,7 +274,7 @@ th, td {
 	font-size: 40px;
 	letter-spacing: 0.3rem;
 	color: white;
-	padding: 10px;
+	padding-top: 10px;
 }
 
 .bar {
@@ -335,42 +334,33 @@ th, td {
 
 /* Responsive */
 @media ( max-width : 400px ) {
-	.member_dropMenu a {
-		font-size: 13px;
-		padding: 5px 5px;
-	}
-	.member_dropMenu {
-		width: 2.5cm;
-		box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-	}
+	.member_dropMenu a{
+        font-size:13px;
+        padding: 5px 5px;
+    }
+    .member_dropMenu{
+        width: 2.7cm;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    }
+	
 	.poster-table {
 		width: 100%;
-		padding: 15px;
 		font-size: 18px;
+		border-spacing: 0px;
 	}
 	.index {
-		min-width: 100px;
-		width: 130px;
+		min-width: 110px;
+		width: 150px;
 	}
 	.poster-title {
-		margin: 50px;
-		font-size: 30px;
+		font-size: 60px;
+		letter-spacing: 0.7rem;
+		
+		background-color: #b42233;
+	    text-align: center;		
 	}
 	th, td {
 		padding: 10px;
-	}
-	#lostdog {
-		/* width:100%;
-      height:flex; */
-		
-	}
-	.member_dropMenu a {
-		font-size: 13px;
-		padding: 5px 5px;
-	}
-	.member_dropMenu {
-		width: 2.2cm;
-		box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
 	}
 }
 
