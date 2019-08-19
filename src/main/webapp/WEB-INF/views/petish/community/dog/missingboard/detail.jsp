@@ -90,31 +90,27 @@
       <div class="content-fluid body-section">
 
       <!-- 게시판명 -->
-      <div id="heading-breadcrumbs" class="border-top-0 border-bottom-0">
+      <div id="heading-breadcrumbs" class="border-top-0 border-bottom-0" style="padding-bottom:10px;">
          <div class="container">
             <div class="row d-flex align-items-center flex-wrap">
-               <div class="col-md-7">
-                  <h1 class="h2">실종견 게시판</h1>
-               </div>
-               <div class="col-md-5">
-                  <ul class="breadcrumb d-flex justify-content-end">
-                  </ul>
-               </div>
+               <div class="col-md-12" style="margin-top:2rem">
+                  <div style="float:left"><h1 class="h2">실종견 게시판</h1></div>
+                  <div style="float:right">
+                  <button type="submit" class="list btn btn-template-outlined custom-button to-list-btn">
+	              	<i class="fa fa-align-justify"></i>
+	              	<a href="/dog/missingboard"> 목록 </a>
+	              </button>
+	              </div>
+                  <hr style="color:rgba(0,0,0,0.10); margin-top:4rem">
+               </div>              
             </div>
          </div>
       </div>
 
 
       <div class="container">
-
-         <!-- LEFT COLUMN _________________________________________________________-->
-         <div id="blog-post" class="col-md-13">
-            
-            <button type="submit" class="list btn btn-template-outlined custom-button to-list-btn">
-               <i class="fa fa-align-justify"></i>
-               <a href="<c:url value='/dog/missingboard/'/>"> 목록 </a>
-            </button>
-
+         <div id="blog-post" class="col-md-13">            
+         
             <!-- 글 제목 -->
             <div class="panel-heading">
 

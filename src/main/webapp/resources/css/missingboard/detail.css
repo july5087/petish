@@ -1,6 +1,9 @@
 table {
 	border-collapse: unset !important;
 }
+.board-title{
+	height:20px;
+}
 
 td.grade {
 	text-align: left;
@@ -16,11 +19,6 @@ td.view {
 	text-align: left;
 	width: 150px;
 }
-
-div.panel-heading {
-	margin-top: 40px;
-}
-
 div#post-content {
 	margin-top: 50px;
 }
@@ -203,6 +201,7 @@ label {
 
 /* user nickname */
 .showMemberDropMenu {
+	font-size:1rem;
 	position: relative;
 	display: inline-block;
 }
@@ -235,8 +234,6 @@ label {
 
 button.btn.btn-template-outlined.custom-button {
 	float: right;
-	margin-right: 15px;
-	margin-top: 20px;
 }
 .dog-content {
 	text-align: left;
