@@ -30,7 +30,6 @@ td.date{
 	text-align:left;
 	width:150px;
 }
-
 td.view{
 	text-align:left;
 	width:150px;
@@ -41,11 +40,9 @@ div.panel-heading{
 .dropdown{
 	text-align:center;
 }
-
 main.img-fluid rounded-circle{
 	width:70px;
 	height:70px;
-
 }
 div#post-content{
 	margin-top:50px;
@@ -58,10 +55,22 @@ div.panel.panel-default.sidebar-menu{
 button.btn.btn-template-outlined.custom-button{
 	margin-right: 2rem;
 }
+.badge{
+	font-size: 100%!important;
+    font-weight: 200!important;
+    color:white!important;
+}
 .btn.btn-danger{
    float:right;
    margin-top:20px;
    margin-right:20px;
+}
+.page-link{
+	background-colot: #bc5148!important;
+	border-color: #bc5148important;
+}
+.to-list-btn{
+	font-size:0.95rem!important;
 }
 
 table{
@@ -73,6 +82,7 @@ button.btn.btn-template-outlined.custom-button{
    margin-right:15px;
    margin-top:20px;
 }
+
 .date-view{
 	width:100%;
 	padding-left:2rem!important;
@@ -144,16 +154,6 @@ button.btn.btn-template-outlined.custom-button{
 
 th, td {
    text-align: left;
-}
-
-.poster-title {
-   background-color: #b42233;
-   text-align: center;   
-   padding-bottom: 1rem;
-   font-size: 60px;
-   font-weight: 900;
-   color: #ffdb58;
-   /* -webkit-text-stroke: 2px black; */
 }
 
 .phonenumber-reward-info {
@@ -325,29 +325,33 @@ label {
     text-align: left !important;
 }
 
-/* ������ */
-@media ( max-width :400px) {
-   .poster-table {
-      width: 100%;
-      padding: 15px;
-      font-size: 18px;
-   }
-   .index {
-      min-width: 100px;
-      width: 130px;
-   }
-   .poster-title {
-      margin: 50px;
-      font-size: 30px;
-   }
-   th, td {
-      padding: 10px;
-   }
-   #lostdog {
-      /* width:100%;
-      height:flex; */
-   }
+.showMemberDropMenu {
+    position: relative;
+    display: inline-block;
 }
+
+.member_dropMenu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.member_dropMenu a {
+    color: grey;
+    text-decoration: none;
+    display: block;
+}
+
+.member_dropMenu a:hover {
+    background-color: #ddd;
+}
+
+.showMemberDropMenu:hover .member_dropMenu {
+    display: block;
+}
+
 
 @media screen and (max-width:750px){
 
@@ -395,7 +399,9 @@ label {
    margin-top:20px;
    margin-right:20px;
 }
-
+.panel-title{
+	color:black!important;
+}
 table{
    border-collapse: unset!important;
 }
@@ -418,6 +424,7 @@ button.btn.btn-template-outlined.custom-button{
 .dog-content{
 	text-align:left;
 	font-size:30px;
+	color:black;
 }
 td.grade{
    text-align:left;
@@ -485,7 +492,7 @@ th, td {
    background-color: #b42233;
    text-align: center;   
    padding-bottom: 1rem;
-   font-size: 75px;
+   font-size: 80px;
    font-weight: 400;
    letter-spacing : 0.7rem;
    color: #ffdb58;
@@ -544,6 +551,7 @@ th, td {
    padding:20px;
    font-size:30px;
    text-align:center;
+   color:black;
 }
 
 /* �̹��� �����̵� */
@@ -691,6 +699,34 @@ label {
       /* width:100%;
       height:flex; */
    }
+   .member_dropMenu a{
+        font-size:13px;
+        padding: 5px 5px;
+    }
+    .member_dropMenu{
+        width: 2.2cm;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    }
+}
+@media (min-width: 400px ) {
+    .member_dropMenu a{
+        font-size:13px;
+        padding: 5px 5px;
+    }
+    .member_dropMenu{
+        width: 2.2cm;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media (min-width: 576px) {
+    .member_dropMenu a{
+        font-size:14px;
+        padding: 7px 7px;
+    }
+    .member_dropMenu{
+        width: 3.5cm;
+    }
 }
 
 @media screen and (max-width:750px){
@@ -767,4 +803,13 @@ label {
 	div.bg_white{
 		display:none;
 	}
+}
+@media (min-width: 768px) {
+    .member_dropMenu a{
+        font-size:14px;
+        padding: 7px 7px;
+    }
+    .member_dropMenu{
+        width: 3.5cm;
+    }
 }

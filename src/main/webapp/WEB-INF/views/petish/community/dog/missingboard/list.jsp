@@ -39,37 +39,6 @@
 
 <link href="/resources/css/fonts.css" rel="stylesheet">
 
-<style>
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: grey;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-</style>
-
 </head>
 
 <body class="bg-light" style="font-family: 'Do Hyeon', sans-serif;">
@@ -108,8 +77,6 @@
 				</div>
 			</div>
 		</div>
-
-		<div style="padding: 0.5rem"></div>
 
 		<div id="content">
 			<div class="container">
@@ -175,20 +142,11 @@
 							<td>
 								<div class="nav navbar-nav ml-auto">
 									<a href="#" data-toggle="dropdown" class="dropdown writer"><%=dto.getNickname() %></a>
-									
-									<%-- <% if (dto.getUser_id() != userId) {%> --%>
-									<div class="dropdown-menu">									
-										<div class='dropdown'>
-											<a href='/member/detail/<%=dto.getUser_id()%>'>작성게시글 보기</a>
-										</div>
-										<br>
-										<div class="dropdow">
-											<a href="#" id="message-btn" class="showmodal" data-toggle="modal" data-id="<%=dto.getUser_id()%>" data-nick="<%=dto.getNickname() %>" data-toggle="modal">쪽지보내기</a>
-										</div>
-									<%-- <%} else {}%> --%>						
-									</div>
+									<div class="dropdown-menu">		
+										<a href='/member/detail/<%=dto.getUser_id()%>'>작성게시글 보기</a>							
+										<a href="#" id="message-btn" class="showmodal" data-toggle="modal" data-id="<%=dto.getUser_id()%>" data-nick="<%=dto.getNickname() %>">쪽지보내기</a>							
+									</div>				
 								</div>
-
 							</td>
 							<td class="test postDate" name="mobile-date">
 							<fmt:formatDate pattern="yyyy-MM-dd" value="<%=dto.getCreate_date() %>"/>
