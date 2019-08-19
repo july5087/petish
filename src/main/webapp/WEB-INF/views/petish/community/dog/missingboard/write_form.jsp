@@ -11,7 +11,7 @@
 <meta name="robots" content="all,follow">
 
 <!-- CSS 파일 추가 -->
-<link rel="stylesheet" type="text/css" href="/resources/css/missingboarfd/write_modify.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/missingboard/write_modify.css">
 <!-- 지도 추가 -->
 <link rel="stylesheet" href="/resources/css/commons/kakaomap.css">
 <!-- datetimepicker 추가 -->
@@ -173,7 +173,7 @@
 													style="display: inline-block; width: 80%;">
 												<button id="addButton" class="btn btn-sm btn-template-main"
 													type="button" onClick="insRow()"
-													style="font-size: 0.9rem; margin-left: 0.2rem;'">추가</button>
+													style="font-size: 1.1rem; margin-left: 0.2rem;'">추가</button>
 
 												<div id="addHere">
                                     			<!-- 특징 입력 폼 추가될 자리 -->
