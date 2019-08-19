@@ -66,24 +66,23 @@
 		<div id="heading-breadcrumbs">
 			<div class="container">
 				<div class="row d-flex align-items-center flex-wrap">
-					<div class="col-md-7">
-						<h1 class="h2">실종견 게시판</h1>
-					</div>
-					<div class="col-md-5">
-						<ul class="breadcrumb d-flex justify-content-end">
-
-						</ul>
-					</div>
+					<div class="col-md-12" style="margin-top:2rem">
+						<div style="float:left"><h1 class="h2">실종견 게시판</h1></div>
+						<div style="float:right">
+		                  <button type="submit" class="list btn btn-template-outlined custom-button to-list-btn">
+			              	<i class="fa fa-align-justify"></i>
+			              	<a href="/dog/missingboard"> 글쓰기</a>
+			              </button>
+		              	</div>
+		              	<hr style="color:rgba(0,0,0,0.10); margin-top:4rem">
+		         	</div>
 				</div>
 			</div>
 		</div>
-
+					
 		<div id="content">
 			<div class="container">
-				<div style="text-align: right; margin: 1rem">
-					<button class="btn btn-template-outlined write-button" id="writeBtn" >글쓰기
-					</button>
-				</div>
+				
 
 				<div id="customer-order" class="col-lg-20">
 					<table class="table" id="post" style="text-align: center">
