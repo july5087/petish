@@ -67,13 +67,13 @@
 							
 							<form id="write_form" action="/dog/freeboard/register" method="post">
 							
-							<input type="hidden" name="user_id" value=<%=loginedUser.getId()%>>
+							<input type="hidden" name="user_id" value="<%=loginedUser.getId()%>">
 
 							<div class="row">
 								<div class="col-sm-6 col-md-2">
 									<div class="form-group">
 										<label for="category">카테고리</label> 
-										<select id="category_id" class="form-control" name="category_id">
+										<select id="category_id" class="form-control" name="category_id" style="width:150px; height:3rem;">
 											<option value="0">카테고리 선택</option>
 											<option value="1">질문</option>
 											<option value="2">일상</option>

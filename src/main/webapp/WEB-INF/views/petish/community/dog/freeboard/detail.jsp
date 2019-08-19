@@ -58,33 +58,30 @@
 		%>
 
 		<!-- 게시판명 -->
-		<div id="heading-breadcrumbs" class="border-top-0 border-bottom-0">
+		<div id="heading-breadcrumbs" class="border-top-0 border-bottom-0" style="padding-bottom:10px;">
 			<div class="container">
-				<div class="row d-flex align-items-center flex-wrap">
-					<div class="col-md-7">
-						<h1 class="h2">자유 게시판</h1>
-					</div>
-					<div class="col-md-5">
-						<ul class="breadcrumb d-flex justify-content-end">
-						</ul>
-					</div>
-				</div>
-			</div>
+	            <div class="row d-flex align-items-center flex-wrap">
+					<div class="col-md-12" style="margin-top:2rem">
+						<div style="float:left"><h1 class="h2">자유게시판</h1></div>
+		                <div style="float:right">
+		                	<button type="submit" class="list btn btn-template-outlined custom-button to-list-btn">
+		              		<i class="fa fa-align-justify"></i>
+		              		<a href="/dog/freeboard"> 목록 </a>
+		              		</button>
+		              	</div>
+		              	<hr style="color:rgba(0,0,0,0.10); margin-top:4rem">
+		           </div>
+	           </div>
+           </div>
 		</div>
 
 		<div class="container">
 			<div class="col-md-13">
-
-				<button type="submit"
-					class="list btn btn-template-outlined custom-button">
-					<i class="fa fa-align-justify"></i> <a
-						href="<c:url value='/dog/freeboard/'/>"> 목록 </a>
-				</button>
-
+			
 				<!-- 글 제목 -->
 				<div class="panel-heading">
 					<a class="btn btn-sm btn-template-main catrgory-btn"><%=dto.getCategory_name()%></a>
-					<h2 class="h3 panel-title"><%=dto.getTitle()%></h2>
+					<h2 class="h3 panel-title" style="color:black!important;"><%=dto.getTitle()%></h2>
 				</div>
 
 				<table>
@@ -92,7 +89,7 @@
 						<!-- <td><img src="/resources/img/blog-avatar2.jpg" alt="" class="img-fluid rounded-circle"></td> -->
 						<td>
 							<div class="nav navbar-nav ml-auto">
-								<a href="#" data-toggle="dropdown" class="nickname dropdown"><%=dto.getNickname()%></a>
+								<a href="#" data-toggle="dropdown" class="nickname dropdown" style="color:black!important;"><%=dto.getNickname()%></a>
 						
 								<div class="dropdown-menu writerDetail">
 									<div class="dropdown">
@@ -117,7 +114,7 @@
 			<hr size="10px">
 
 			<!-- 글 내용 -->
-			<div id="post-content">
+			<div id="post-content" style="color:black!important;">
 				<%=dto.getContent()%>
 			</div>
 			
@@ -180,9 +177,7 @@
 									</div>
 
 									<div class="comment-button-div">
-										<button
-											class="re btn btn-template-outlined comment-input-button"
-											id="input_data">댓글 등록</button>
+										<button class="re btn btn-template-outlined comment-input-button" id="input_data" style="height:7.5rem!important">댓글 등록</button>
 									</div>
 								</div>
 							</div>

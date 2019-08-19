@@ -62,29 +62,23 @@
 			<input type="hidden" value=<%=pageNum %>>
 		</form>
 
-		<div id="heading-breadcrumbs">
+		<div id="heading-breadcrumbs" style="padding-bottom:0">
 			<div class="container">
 				<div class="row d-flex align-items-center flex-wrap">
-					<div class="col-md-7">
-						<h1 class="h2">자유게시판</h1>
-					</div>
-					<div class="col-md-5">
-						<ul class="breadcrumb d-flex justify-content-end">
-
-						</ul>
-					</div>
+					<div class="col-md-12" style="margin-top:2rem">
+	                  <div style="float:left"><h1 class="h2">자유게시판</h1></div>
+	                  <div style="float:right">
+	                  	<button class="btn btn-template-outlined write-button" style="margin-top:0;" id="writeBtn" >글쓰기</button>
+		              </div>
+	                  <hr style="color:rgba(0,0,0,0.10); margin-top:4rem">
+	               </div>
 				</div>
 			</div>
 		</div>
-
-		<div style="padding: 0.5rem"></div>
-
+		
 		<div id="content">
 			<div class="container">
 				<div style="text-align: right; margin: 1rem">
-					<button class="btn btn-template-outlined write-button" id="writeBtn" >글쓰기
-					</button>
-					
 					<form id="categoryForm" action="/dog/freeboard" method="post">		
 						<div class="row">
 							<div class="col-sm-6 col-md-2">
@@ -193,7 +187,7 @@
 					class="d-flex justify-content-center">					
 					<div class="col-md-2 col-lg-2">
 						<div class="form-group">	           				
-								<select id="state" name="type" class="form-control">
+								<select id="state" name="type" class="form-control" style="height:3rem">
 			           				<option value=""
 		           					<c:out value="${pageMaker.cri.type == null ? 'selected':''}"/>>------</option>
 		           					<option value="T"
@@ -209,12 +203,9 @@
 	    			<div class="panel panel-default sidebar-menu">
 	    				<div class="panel-body">
 	           				<div class="input-group">
-			           			<input type='text' name='keyword' id='searchInput' placeholder="Search" class="form-control" 
-			           			value='<c:out value="${pageMaker.cri.keyword}"/>' />
-			           			<input type='hidden' name='pageNum'
-			           			value='<c:out value="${pageMaker.cri.pageNum}"/>' />
-			           			<input type='hidden' name='amount'
-			           			value='<c:out value="${pageMaker.cri.amount}"/>' />
+			           			<input type='text' name='keyword' id='searchInput' placeholder="Search" class="form-control" />
+			           			<input type='hidden' name='pageNum' value='<c:out value="${pageMaker.cri.pageNum}"/>' />
+			           			<input type='hidden' name='amount' value='<c:out value="${pageMaker.cri.amount}"/>' />
 			           			
 			           			<span class="input-group-btn">
 									<button type="submit" id="searchBtn" class="btn btn-template-main">
@@ -237,7 +228,7 @@
 		<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
 		<input type='hidden' name='type' value='<c:out value="${pageMaker.cri.type }"/>'>
 		<input type='hidden' name='keyword' value='<c:out value="${pageMaker.cri.keyword }"/>'>
-	</form>f
+	</form>
 	
 	<!-- 쪽지 보내기 모달창 -->
 	<div id="message-modal" tabindex="-1" role="dialog" aria-hidden="true"
